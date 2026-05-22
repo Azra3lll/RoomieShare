@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
+
+    <EditText
+        android:id="@+id/editChoreTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Chore Title"
+        android:paddingHorizontal="16dp"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:background="@drawable/item_background_rounded"
+        android:textColor="?attr/colorOnSurface"
+        android:textColorHint="?attr/colorOutline"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editChoreDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:hint="Description (optional)"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:textSize="16sp"
+        android:background="@drawable/item_background_rounded"
+        android:textColor="?attr/colorOnSurface"
+        android:textColorHint="?attr/colorOutline"
+        android:layout_marginBottom="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPickDueDate"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Pick Due Date"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/textDueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No date selected"
+        android:textAlignment="center"
+        android:textColor="?attr/colorSecondary"
+        android:textSize="14sp" />
+
+</LinearLayout>

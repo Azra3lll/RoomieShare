@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- ─── No Group State ─── -->
+    <LinearLayout
+        android:id="@+id/groupOptionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Orange Gradient Hero -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/hero_orange">
+
+            <View android:layout_width="140dp" android:layout_height="140dp"
+                android:layout_gravity="top|end" android:layout_marginTop="-30dp" android:layout_marginEnd="-30dp"
+                android:background="@drawable/avatar_circle_bg" android:alpha="0.08"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:padding="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏠 My Group"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Connect with your roommates"
+                    android:textSize="14sp"
+                    android:textColor="#CCFFFFFF"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Empty state content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👥"
+                android:textSize="64sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Group Yet"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnBackground"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create a new group or join an existing one to get started."
+                android:textSize="15sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textAlignment="center"
+                android:layout_marginBottom="40dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCreateGroup"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="✨  Create Group"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="#E65100"
+                android:textColor="#FFFFFF"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonJoinGroup"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="🔗  Join Group"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:strokeColor="#E65100"
+                app:strokeWidth="2dp"
+                android:textColor="#E65100"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ─── Has Group State ─── -->
+    <ScrollView
+        android:id="@+id/groupInfoCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Orange Gradient Hero for group -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/hero_orange">
+
+                <View android:layout_width="140dp" android:layout_height="140dp"
+                    android:layout_gravity="top|end" android:layout_marginTop="-30dp" android:layout_marginEnd="-30dp"
+                    android:background="@drawable/avatar_circle_bg" android:alpha="0.08"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/textGroupName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Group Name"
+                        android:textStyle="bold"
+                        android:textSize="28sp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#33FFFFFF"
+                        app:cardCornerRadius="12dp"
+                        app:strokeWidth="0dp"
+                        android:layout_marginTop="12dp">
+                        <TextView
+                            android:id="@+id/textGroupCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Code: XXXXXXXX"
+                            android:textSize="16sp"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="8dp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Edit Group button — shown only to group creator -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonEditGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✏️  Edit Group"
+                        android:textAllCaps="false"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        app:cornerRadius="12dp"
+                        app:backgroundTint="#44FFFFFF"
+                        android:layout_marginTop="14dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Members Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="?attr/colorSurface">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="16dp">
+                            <View android:layout_width="4dp" android:layout_height="22dp"
+                                android:background="#E65100" android:layout_marginEnd="10dp"/>
+                            <TextView
+                                android:id="@+id/textGroupMembersLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="👥 Members"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#E65100"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutGroupMembers"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonLeaveGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Leave Group"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:strokeColor="#E53935"
+                    app:strokeWidth="2dp"
+                    android:textColor="#E53935"
+                    android:layout_marginBottom="32dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

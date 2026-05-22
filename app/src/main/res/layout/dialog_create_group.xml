@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
+
+    <EditText
+        android:id="@+id/editGroupName"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Group Name"
+        android:paddingHorizontal="16dp"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:background="@drawable/item_background_rounded"
+        android:textColor="?attr/colorOnSurface"
+        android:textColorHint="?attr/colorOutline" />
+
+</LinearLayout>
